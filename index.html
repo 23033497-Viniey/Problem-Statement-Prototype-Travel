@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Travel Concierge - Your Travel Digital Wallet</title>
+  <style>
+    :root {
+      --bs-nav-bg: lightblue;
+    }
+ 
+    .navbar-custom {
+      --bs-navbar-color: rgba(14, 10, 10, 0.75);
+      --bs-navbar-hover-color: rgba(7, 6, 6, 0.9);
+      --bs-navbar-active-color: black;
+      font-family: 'Roboto Serif', serif;
+    }
+ 
+    .navbar-brand {
+      color: black;
+    }
+ 
+    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ 
+    :root {
+      --primary-color: #ff833e;
+      --primary-color-dark: #db6f35;
+      --text-dark: #333333;
+      --text-light: #767268;
+      --white: #ffffff;
+      --max-width: 1200px;
+      --header-font: "Bebas Neue", sans-serif;
+    }
+ 
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+ 
+    img {
+      display: flex;
+      width: 100%;
+    }
+ 
+    a {
+      text-decoration: none;
+      transition: 0.3s;
+    }
+ 
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+ 
+    .header__container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding-block: 8rem 2rem;
+      padding-inline: 1rem;
+      display: grid;
+      gap: 2rem;
+      overflow-x: hidden;
+    }
+ 
+    .header__image {
+      position: relative;
+      isolation: isolate;
+    }
+ 
+    .header__image::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      max-width: 550px;
+      aspect-ratio: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url("header-bg.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 100%;
+      opacity: 0.5;
+      z-index: -1;
+    }
+ 
+    .header__image img {
+      max-width: 520px;
+      margin-inline: auto;
+    }
+ 
+    .header__image__card {
+      position: absolute;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      background-color: var(--white);
+      white-space: nowrap;
+      border-radius: 5px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+ 
+    .header__image__card span {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+ 
+    .header__image__card-1 {
+      top: 25%;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+ 
+    .header__image__card-2 {
+      top: 10%;
+      right: 2rem;
+      transform: translateY(-50%);
+    }
+ 
+    .header__image__card-3 {
+      top: 60%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+ 
+    .header__image__card-4 {
+      top: 70%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+ 
+    .header__content h3 {
+      margin-bottom: 1rem;
+      font-size: 3rem;
+      font-weight: 400;
+      font-family: var(--header-font);
+      color: var(--text-dark);
+      line-height: 4rem;
+      text-align: center;
+    }
+ 
+    .header__content h3 span {
+      color: var(--primary-color);
+    }
+ 
+    .header__content p {
+      margin-bottom: 2rem;
+      columns: var(--text-light);
+      line-height: 1.75rem;
+      text-align: center;
+    }
+ 
+    .header__content form {
+      margin-bottom: 4rem;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 1rem 0;
+      border-radius: calc(1rem + 10px);
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    }
+ 
+    .header__content .input__row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+    }
+ 
+    .header__content .input__group {
+      flex: 1;
+    }
+ 
+    .header__content .input__group h5 {
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+ 
+    .header__content .input__group>div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+ 
+    .header__content input {
+      width: 100%;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      background-color: transparent;
+    }
+ 
+    .header__content input::placeholder {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+ 
+    .header__content .input__group span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+ 
+    .header__content button {
+      width: 100%;
+      padding: 1rem 2rem;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      white-space: nowrap;
+      color: var(--white);
+      background-color: var(--primary-color);
+      border-radius: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+ 
+    .header__content button:hover {
+      background-color: var(--primary-color-dark);
+    }
+ 
+    .header__content .bar {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+ 
+    @media (width > 768px) {
+ 
+      .header__container {
+        padding-block: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+      }
+ 
+      .header__image {
+        grid-area: 1/2/2/3;
+      }
+ 
+      .header__content :is(h1, p, .bar) {
+        text-align: left;
+      }
+    }
+ 
+    @media (width > 1024px) {
+      .header__content form {
+        flex-direction: row;
+      }
+ 
+      .header__content button {
+        width: fit-content;
+      }
+    }
+  </style>
+</head>
+ 
+<body>
+    <nav class="navbar navbar-expand-sm" style="background-color: lightblue">
+
+        <div class="container-fluid">
+    
+            <b><a class="navbar-brand" href="#">Travel Concierge</a></b>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+    
+                <span class="navbar-toggler-icon"></span>
+    
+            </button>
+    
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    
+                <ul class="navbar-nav">
+    
+                    <li class="nav-item">
+    
+                        <a class="nav-link" href="index.html">Home</a>
+    
+                    </li>
+    
+                    <li class="nav-item">
+    
+                        <a class="nav-link" href="about.html">About</a>
+    
+                    </li>
+    
+                    <li class="nav-item">
+    
+                        <a class="nav-link" href="signup.html">Sign Up</a>
+    
+                    </li>
+    
+                    <li class="nav-item">
+    
+                        <a class="nav-link" href="contact.html">Contact</a>
+    
+                    </li>
+    
+                    <li class="nav-item">
+    
+                        <a class="nav-link" href="transaction.html">Expense Tracking</a>
+    
+                    </li>
+    
+                </ul>
+    
+            </div>
+    
+        </div>
+    
+    </nav> 
+  <header class="header__container">
+    <div class="header__image">
+      <div class="header__image__card header__image__card-1">
+        <span><i class="ri-key-line"></i></span>
+        Digital Wallet
+      </div>
+      <div class="header__image__card header__image__card-2">
+        <span><i class="ri-passport-line"></i></span>
+        Currency Exchange
+      </div>
+      <div class="header__image__card header__image__card-3">
+        <span><i class="ri-map-2-line"></i></span>
+        Expense Tracking
+      </div>
+      <div class="header__image__card header__image__card-4">
+        <span><i class="ri-guide-line"></i></span>
+        Secure Transactions
+      </div>
+      <img src="header.png" alt="header" />
+    </div>
+    <div class="header__content">
+      <h3>LET'S GO!<br />THE <span>ADVENTURE</span> IS WAITING FOR YOU</h3>
+      <p>
+        Travel Concierge was founded with the mission to simplify travel planning and enhance travel experiences. Our
+        team is dedicated to providing a seamless and enjoyable travel management tool for travelers worldwide.
+      </p>
+      <!-- <form action="/">
+        <div class="input__row">
+          <div class="input__group">
+            <h5>Start now!</h5>
+            <div>
+              <span><i class="ri-map-pin-line"></i></span>
+              <input type="text" placeholder="Paris, France" />
+            </div>
+          </div>
+          <div class="input__group">
+            <h5>Date</h5>
+            <div>
+              <span><i class="ri-calendar-2-line"></i></span>
+              <input type="text" placeholder="17 July 2024" />
+            </div>
+          </div>
+        </div>
+        <button type="submit">Search</button>
+      </form> -->
+      <div class="text-center">
+      <a href="signup.html" class="btn btn-warning" style="background-color: #ff833e; color: white; ">Start Now!</a>
+      </div>
+      <br><br><br>
+      <div class="bar">
+        <p class="text-center">Copyright © 2024 Travel Concierge. All rights reserved.</p>
+      </div>
+    </div>
+  </header>
+</body>
+<footer>
+    Team
+</footer>
+ 
+</html>
+ 
